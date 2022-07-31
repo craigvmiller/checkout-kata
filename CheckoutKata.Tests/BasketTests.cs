@@ -18,7 +18,7 @@ namespace CheckoutKata.Tests
             var basket = new Basket();
             basket.Add(item);
 
-            Assert.AreEqual(1, basket.Items.Count);
+            Assert.AreEqual(1, basket.Count);
         }
 
         [TestCase]
@@ -41,6 +41,23 @@ namespace CheckoutKata.Tests
             basket.Add(item2);
 
             Assert.AreEqual(25, basket.Total);
+        }
+
+        [TestCase]
+        public void Applies_3_For_40_Promotion()
+        {
+            var item = new BasketItem
+            {
+                SKU = "B",
+                UnitPrice = 15,
+            };
+
+            var basket = new Basket();
+            basket.Add(item);
+            basket.Add(item);
+            basket.Add(item);
+
+            Assert.AreEqual(40, basket.Total);
         }
     }
 }
