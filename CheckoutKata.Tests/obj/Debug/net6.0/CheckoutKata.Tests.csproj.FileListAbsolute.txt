@@ -1,0 +1,15 @@
+C:\Users\craig\source\repos\checkout-kata\CheckoutKata.Tests\bin\Debug\net6.0\CheckoutKata.Tests.deps.json
+C:\Users\craig\source\repos\checkout-kata\CheckoutKata.Tests\bin\Debug\net6.0\CheckoutKata.Tests.dll
+C:\Users\craig\source\repos\checkout-kata\CheckoutKata.Tests\bin\Debug\net6.0\CheckoutKata.Tests.pdb
+C:\Users\craig\source\repos\checkout-kata\CheckoutKata.Tests\bin\Debug\net6.0\CheckoutKata.Application.dll
+C:\Users\craig\source\repos\checkout-kata\CheckoutKata.Tests\bin\Debug\net6.0\CheckoutKata.Application.pdb
+C:\Users\craig\source\repos\checkout-kata\CheckoutKata.Tests\obj\Debug\net6.0\CheckoutKata.Tests.csproj.AssemblyReference.cache
+C:\Users\craig\source\repos\checkout-kata\CheckoutKata.Tests\obj\Debug\net6.0\CheckoutKata.Tests.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\craig\source\repos\checkout-kata\CheckoutKata.Tests\obj\Debug\net6.0\CheckoutKata.Tests.AssemblyInfoInputs.cache
+C:\Users\craig\source\repos\checkout-kata\CheckoutKata.Tests\obj\Debug\net6.0\CheckoutKata.Tests.AssemblyInfo.cs
+C:\Users\craig\source\repos\checkout-kata\CheckoutKata.Tests\obj\Debug\net6.0\CheckoutKata.Tests.csproj.CoreCompileInputs.cache
+C:\Users\craig\source\repos\checkout-kata\CheckoutKata.Tests\obj\Debug\net6.0\CheckoutKata.Tests.csproj.CopyComplete
+C:\Users\craig\source\repos\checkout-kata\CheckoutKata.Tests\obj\Debug\net6.0\CheckoutKata.Tests.dll
+C:\Users\craig\source\repos\checkout-kata\CheckoutKata.Tests\obj\Debug\net6.0\refint\CheckoutKata.Tests.dll
+C:\Users\craig\source\repos\checkout-kata\CheckoutKata.Tests\obj\Debug\net6.0\CheckoutKata.Tests.pdb
+C:\Users\craig\source\repos\checkout-kata\CheckoutKata.Tests\obj\Debug\net6.0\ref\CheckoutKata.Tests.dll
