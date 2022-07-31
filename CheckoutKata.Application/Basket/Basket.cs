@@ -1,4 +1,6 @@
-﻿namespace CheckoutKata.Application
+﻿using CheckoutKata.Application.Promotion;
+
+namespace CheckoutKata.Application.Basket
 {
     public class Basket
     {
@@ -53,9 +55,9 @@
 
                         if (promotion.PromotionType == PromotionType.DiscountPercentage)
                         {
-                            var discountAmount = (promotion.Amount / 100) * item.Item.UnitPrice;
-                            discountAmount *= (item.Quantity / promotion.QuantityRequired);
-                            total += (item.Item.UnitPrice * item.Quantity) - discountAmount;
+                            var discountAmount = promotion.Amount / 100 * item.Item.UnitPrice;
+                            discountAmount *= item.Quantity / promotion.QuantityRequired;
+                            total += item.Item.UnitPrice * item.Quantity - discountAmount;
                         }
                     }
                 }
@@ -66,18 +68,5 @@
             }
             _total = total;
         }
-    }
-
-    public class BasketItem
-    {
-        public string SKU { get; set; }
-        public decimal UnitPrice { get; set; }
-    }
-
-    public class BasketItemSummary
-    {
-        public BasketItem Item { get; set; }
-        public int Quantity { get; set; }
-        public decimal Total { get; set; }
     }
 }

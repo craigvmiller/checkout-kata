@@ -1,0 +1,24 @@
+﻿@model BasketViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="basket-header">
+    <div>Item SKU</div>
+    <div>Unit Price</div>
+    <div>Quantity</div>
+    <div>Total</div>
+</div>
+
+@foreach (var item in Model.Items)
+{
+    <div>@item.ItemSKU</div>
+    <div>@item.UnitPrice</div>
+    <div>@item.Quantity</div>
+    <div>@item.Total</div>
+}
+
+<div class="basket-footer">
+    <div>@Model.Total</div>
+</div>
