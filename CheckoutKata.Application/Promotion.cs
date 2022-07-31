@@ -5,7 +5,7 @@
         public string ItemSKU { get; set; }
         public int QuantityRequired { get; set; }
         public PromotionType PromotionType { get; set; }
-        public int Amount { get; set; }
+        public decimal Amount { get; set; }
     }
 
     public enum PromotionType

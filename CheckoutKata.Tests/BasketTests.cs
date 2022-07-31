@@ -59,5 +59,40 @@ namespace CheckoutKata.Tests
 
             Assert.AreEqual(40, basket.Total);
         }
+
+        [TestCase]
+        public void Only_Applies_3_For_40_Promotion_On_Correct_Quantities()
+        {
+            var item = new BasketItem
+            {
+                SKU = "B",
+                UnitPrice = 15,
+            };
+
+            var basket = new Basket();
+            basket.Add(item);
+            basket.Add(item);
+            basket.Add(item);
+            basket.Add(item);
+            basket.Add(item);
+
+            Assert.AreEqual(70, basket.Total);
+        }
+
+        [TestCase]
+        public void Applies_25_Percent_Discount()
+        {
+            var item = new BasketItem
+            {
+                SKU = "D",
+                UnitPrice = 55,
+            };
+
+            var basket = new Basket();
+            basket.Add(item);
+            basket.Add(item);
+
+            Assert.AreEqual(96.25m, basket.Total);
+        }
     }
 }

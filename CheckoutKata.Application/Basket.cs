@@ -4,9 +4,9 @@
     {
         private readonly PromotionService _promotionService;
         private ICollection<BasketItemSummary> _items;
-        private int _total;
+        private decimal _total;
 
-        public int Total => _total;
+        public decimal Total => _total;
         public int Count => _items.Sum(i => i.Quantity);
 
         public Basket()
@@ -37,16 +37,31 @@
 
         private void UpdateTotal()
         {
-            var total = 0;
+            var total = 0m;
             foreach (var item in _items)
             {
-                foreach (var promotion in _promotionService.GetRelevantPromotions(item))
+                var promotions = _promotionService.GetRelevantPromotions(item);
+                if (promotions.Any())
                 {
-                    if (promotion.PromotionType == PromotionType.PriceOverride)
+                    foreach (var promotion in _promotionService.GetRelevantPromotions(item))
                     {
-                        total += promotion.Amount * (item.Quantity / promotion.QuantityRequired);
-                        total += item.Item.UnitPrice * (item.Quantity % promotion.QuantityRequired);
+                        if (promotion.PromotionType == PromotionType.PriceOverride)
+                        {
+                            total += promotion.Amount * (item.Quantity / promotion.QuantityRequired);
+                            total += item.Item.UnitPrice * (item.Quantity % promotion.QuantityRequired);
+                        }
+
+                        if (promotion.PromotionType == PromotionType.DiscountPercentage)
+                        {
+                            var discountAmount = (promotion.Amount / 100) * item.Item.UnitPrice;
+                            discountAmount *= (item.Quantity / promotion.QuantityRequired);
+                            total += (item.Item.UnitPrice * item.Quantity) - discountAmount;
+                        }
                     }
+                }
+                else
+                {
+                    total += item.Item.UnitPrice * item.Quantity;
                 }
             }
             _total = total;
@@ -56,13 +71,13 @@
     public class BasketItem
     {
         public string SKU { get; set; }
-        public int UnitPrice { get; set; }
+        public decimal UnitPrice { get; set; }
     }
 
     public class BasketItemSummary
     {
         public BasketItem Item { get; set; }
         public int Quantity { get; set; }
-        public int Total { get; set; }
+        public decimal Total { get; set; }
     }
 }
